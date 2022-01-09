@@ -1,0 +1,95 @@
+v = [1:6]
+v = [1:0.1:1]
+v = ones(1,3)
+v = zeros(2,3)
+v = rand(3,4)
+w = randn(3,4)
+hist(w)
+hist(w, 50)
+i = eye(4)
+
+size(v)
+size(v,1) % row
+size(v,2) % column
+
+length(v)
+who	% 查看当前的所有变量
+whos
+
+load featureX.dat	% load 之后可以用who/whos查看
+load('featureX.dat')
+clear featureX	% 清除变量
+
+w = pricesY(1:10)	%获取pricesY的前10个元素值
+save hello.mat w	%保存w为hello.mat文件
+save hello.txt w -ascii
+
+A(3,2)	% 矩阵A的3行2列元素
+A(3,:)	% 3th row
+A([1 3],:)	% 1th and 3th row
+A(:,2)	%2th column
+A(:,2) = [1; 2; 3]	% 重新赋值
+A = [A, [6; 7; 8]]
+A(:)	% 把矩阵A中的所有元素都放进向量中
+C = [A B]
+C = [A; B]
+C = A .* B	% 把A的元素依次与B的元素相乘
+A .^ 2
+A + 1
+A'	% 转置矩阵
+a < 3
+find(a < 3) %查找a中小于3的数的索引值
+[r, c] = find(a < 3) % row column
+sum(a)	% 和
+sum(a,1) % 列和
+sum(a,2) % 行和
+prod(a)	% 积
+floor(a)% 向下取整
+ceil(a)	% 向上取整
+
+max(A, [], 1) %列中最大值
+max(A, [], 2) %行中最大值
+max(A(:))	%A中最大值
+max(max(A))	%A中最大值
+
+flipud(eye(4))	% 左下到右上的对角线为1
+pinv(A)	% 求逆矩阵
+
+>> t = [0:0.1:0.98]
+>> y = sin(2 * pi * 4 * t)
+>> y1 = cos(2 * pi * 4 * t)
+>> plot(t, y)
+>> y1 = cos(2 * pi * 4 * t);
+>> plot(t, y1)
+>> plot(t, y)
+>> hold on
+>> plot(t, y1, 'r')
+>> xlabel('times')
+>> ylabel('values')
+>> title('My plot')
+>> legend('sin', 'cos')
+>> print -dpng 'myplot.png'
+>> figure(1), plot(t, y)
+>> figure(2), plot(t, y1)
+>> subplot(1,2,1)
+>> plot(t, y)
+>> subplot(1,2,2)
+>> plot(t, y1)
+>> axis([0 0.5 -1 1])
+>> clf
+>>
+>> imagesc(A)
+>> imagesc(A), colorbar
+>> imagesc(A), colorbar, colormap gray
+>> for i=1:10,
+       v(i) = 2 ^ i;
+   end;
+>> v
+
+% 文件以myfunction.m命名
+function y = myfunction(x)
+y = x ^ 2
+
+
+
+function
